@@ -1,6 +1,6 @@
-# Really Easy Bitcoin
+# Portable Bitcoin Node
 
-Portable verified Bitcoin Core, Tor, and Sparrow setup for a folder or USB stick.
+A portable, verified Bitcoin Core node with bundled Tor and Sparrow support.
 
 Keep the node, wallet app, Tor runtime, and all runtime data together without using `~/.bitcoin`.
 
@@ -119,6 +119,29 @@ Sparrow verification:
 
 ---
 
+## Security Model
+
+This project verifies downloaded software before making it usable in the portable folder.
+
+What is checked:
+
+- Bitcoin Core release hashes are verified through signed `SHA256SUMS`.
+- Bitcoin Core signatures are checked against imported Guix builder keys.
+- Tor Expert Bundle signatures are checked against the pinned Tor Browser signing primary key.
+- Sparrow archives are checked against Craig Raw's signed release manifest.
+- Temporary GPG homes are used so imported verification keys do not alter your normal keyring.
+
+What is still trusted:
+
+- HTTPS is still required for downloads.
+- The scripts trust the configured upstream URLs.
+- Signing keys are downloaded from their configured key sources during install.
+- Your local machine, shell, filesystem, and network environment must not already be compromised.
+
+The scripts do not silently bypass TLS verification. If a network intercepts HTTPS, the download should fail before signature verification begins.
+
+---
+
 ## Configuration
 
 On first setup, the scripts create `bitcoin-data/bitcoin.conf` with portable defaults:
@@ -203,3 +226,5 @@ After setup, the folder contains:
 Sparrow does not currently publish an official AppImage, so this project uses Sparrow's official standalone Linux archive.
 
 Tor Project downloads may fail on networks that intercept TLS. Use a VPN or a network without HTTPS inspection if needed.
+
+Although this is a pruned node, initial sync still downloads and validates the chain. Expect meaningful bandwidth use and plan for roughly 20-25 GB of local storage with the current defaults, based on real-world use. Exact usage can vary by Bitcoin Core version and runtime state.
