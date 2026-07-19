@@ -1,8 +1,8 @@
 # Really Easy Bitcoin
 
-A portable, verified Bitcoin Core node kit with bundled Tor and Sparrow support.
+A portable Bitcoin validator and wallet environment with verified Bitcoin Core, bundled Tor, and Sparrow Wallet support.
 
-Keep the node, wallet app, Tor runtime, and all runtime data together without using `~/.bitcoin`.
+Run a pruned validating node and wallet stack from one folder or USB stick, with node data, wallet app state, and Tor runtime data kept together outside `~/.bitcoin`.
 
 [📦 Install](#install) [▶ Start](#start) [🔎 Info](#info) [🧭 Sparrow](#sparrow) [🔐 Verification](#verification)
 
@@ -10,9 +10,9 @@ Keep the node, wallet app, Tor runtime, and all runtime data together without us
 
 ## Overview
 
-This project builds a self-contained Bitcoin workspace from verified upstream release artifacts.
+This project builds a self-contained Bitcoin self-custody workspace from verified upstream release artifacts.
 
-It downloads Bitcoin Core, Tor Expert Bundle, and Sparrow Wallet into the current portable folder, verifies signatures and hashes, and keeps runtime state beside the scripts.
+It downloads Bitcoin Core, Tor Expert Bundle, and Sparrow Wallet into the current portable folder, verifies signatures and hashes, and keeps the validator, wallet runtime, and network proxy state beside the scripts.
 
 The setup is designed for removable storage or any folder you want to move between machines.
 
