@@ -14,7 +14,9 @@ This project builds a self-contained Bitcoin self-custody workspace from verifie
 
 It downloads Bitcoin Core, Tor Expert Bundle, and Sparrow Wallet into the current portable folder, verifies signatures and hashes, and keeps the validator, wallet runtime, and network proxy state beside the scripts.
 
-The setup is designed for removable storage or any folder you want to move between machines.
+The setup is pruned, but it is still a real Bitcoin validator: initial sync must download and validate the full blockchain history before the node is fully caught up.
+
+The setup is designed for fast removable storage or any folder you want to move between machines. A USB M.2 SSD enclosure is strongly recommended over a cheap USB flash drive.
 
 ---
 
@@ -231,4 +233,6 @@ Sparrow does not currently publish an official AppImage, so this project uses Sp
 
 Tor Project downloads may fail on networks that intercept TLS. Use a VPN or a network without HTTPS inspection if needed.
 
-Although this is a pruned node, initial sync still downloads and validates the chain. Expect meaningful bandwidth use and plan for roughly 20-25 GB of local storage with the current defaults, based on real-world use. Exact usage can vary by Bitcoin Core version and runtime state.
+Although this is a pruned node, initial sync still downloads and validates the full blockchain. Expect meaningful bandwidth use and plan for roughly 20-25 GB of local storage with the current defaults, based on real-world use. Exact usage can vary by Bitcoin Core version and runtime state.
+
+Use fast external storage. A USB M.2 SSD enclosure is advised; slow flash drives can make initial validation painfully slow and may wear out faster under database writes.
