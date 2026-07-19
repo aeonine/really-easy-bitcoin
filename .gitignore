@@ -1,0 +1,19 @@
+# Downloaded Bitcoin Core binaries
+/bitcoind
+/bitcoin-cli
+
+# Local Bitcoin Core runtime state
+/bitcoin-data/
+/bitcoind.pid
+
+# Local Tor runtime and state
+/tor-runtime/
+/tor-data/
+/tor.pid
+
+# Local Sparrow runtime and wallet/application state
+/sparrow-runtime/
+/sparrow-home/
+
+# Temporary logs or local scratch files
+*.log

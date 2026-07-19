@@ -26,7 +26,10 @@ SPARROW_BINARY="$(find_sparrow)"
 chmod 0755 "$SPARROW_BINARY"
 
 # This local HOME keeps Sparrow settings and wallet files in sparrow-home/.
+# Use owner-only permissions because wallet metadata does not belong in a
+# group/world-readable folder on shared systems or removable media.
 mkdir -p "$SPARROW_HOME"
+chmod 0700 "$SPARROW_HOME"
 
 printf 'Launching Sparrow from %s\n' "$SPARROW_BINARY"
 printf 'Sparrow home: %s\n' "$SPARROW_HOME"

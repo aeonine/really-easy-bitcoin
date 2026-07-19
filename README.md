@@ -92,6 +92,8 @@ Launch Sparrow Wallet from the portable runtime:
 
 The launcher sets `HOME` to `sparrow-home/` for the Sparrow process, keeping Sparrow settings and wallet data in the portable folder.
 
+`sparrow-home/` is never deleted by the install or update scripts. Updates replace `sparrow-runtime/`, not wallet/application data. The launcher also sets `sparrow-home/` permissions to owner-only.
+
 ---
 
 ## Verification
@@ -180,6 +182,8 @@ sparrow-home/
 ```
 
 The scripts do not use the default Bitcoin Core datadir at `~/.bitcoin`.
+
+Treat `sparrow-home/` as sensitive wallet data. Keep backups of wallet files and seed material, and prefer hardware-wallet or watch-only workflows for meaningful funds.
 
 ---
 
