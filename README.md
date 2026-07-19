@@ -1,6 +1,6 @@
-# Portable Bitcoin Node
+# Really Easy Bitcoin
 
-A portable, verified Bitcoin Core node with bundled Tor and Sparrow support.
+A portable, verified Bitcoin Core node kit with bundled Tor and Sparrow support.
 
 Keep the node, wallet app, Tor runtime, and all runtime data together without using `~/.bitcoin`.
 
